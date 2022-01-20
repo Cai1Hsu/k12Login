@@ -1,0 +1,246 @@
+﻿/*乐清中学登录页面css*/
+.layui-elem-quote {
+    background: #ffffff;
+    color: #333333;
+    height: 52px;
+    line-height: 52px;
+    border-left: 6px solid #3399CC;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 0px 0px 0px #888888;
+    padding: 0px;
+}
+.layui-elem-quote input {
+    height: 30px;
+}
+.layui-elem-quote .layui-elem-quote-left {
+    float: left;
+    padding-left: 10px;
+    height: 52px;
+    line-height: 52px;
+}
+.layui-elem-quote .layui-elem-quote-right {
+    float: right;
+    padding-right: 10px;
+}
+.layui-btn, .layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background: #3399CC;
+}
+~
+.layui-btn-ccs-border {
+    border: solid 1px #dedede;
+    border-radius: 5px;
+}
+.layui-quote-btn {
+    background: none;
+    color: #999
+}
+.layui-quote-btn:hover {
+    color: #333
+}
+/*quote中的按钮样式*/
+.layui-elem-quote .layui-btn {
+    background: none;
+    color: #999
+}
+/*quote中的按钮鼠标移入样式*/
+.layui-elem-quote .layui-btn:hover {
+    color: #333
+}
+/*导航中的背景色*/
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+    background: #3399CC;
+}
+/*所有元素的字体大小*/
+*, .layui-btn {
+    font-size: 12px;
+}
+/*导航中的字体大小*/
+.layui-nav * {
+    font-size: 12px;
+}
+/*表格表头、底部分页背景样式*/
+.layui-table-header tr th, .layui-table-page {
+    background: #eee;
+}
+/*表格、表单中复选框选中样式*/
+.layui-form-checked[lay-skin=primary] i {
+    background: #3399cc;
+    border-color: #3399cc;
+    color: white
+}
+/*左侧导航中，文字样式*/
+.nav-text {
+    margin-left: 10px;
+    height: 40px !important;
+    line-height: 45px !important;
+    float: left;
+}
+/*左侧导航中，被选中项样式*/
+.layui-nav-tree .layui-this {
+    background-color: #121212 !important;
+    color: #fff !important;
+    border-left: 6px solid #3399CC !important;
+}
+/*左上角LOGO样式*/
+.layui-header > .layui-logo {
+    color: #fff;
+    background: #393d48
+}
+
+.layui-logo > .iconfont-logo {
+    font-size: 30px !important;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle
+}
+/*左侧导航中，字体图标样式*/
+.layui-nav .iconfont {
+    float: left;
+    font-size: 18px !important;
+    height: 40px !important;
+    line-height: 25px !important;
+}
+/*左侧导航中，子节点的缩进*/
+.layui-nav .layui-nav-child a i {
+    margin-left: 24px !important;
+}
+/*左侧导航中，鼠标放到子节点上，父节点的左侧背景样式*/
+.layui-nav-tree .layui-nav-bar {
+    background: #3399cc;
+}
+.layui-inline-margin-right {
+    margin-right: 10px;
+}
+.layui-btn-size {
+    width: 86px;
+}
+.layui-btn-link {
+    background: none;
+    color: #999
+}
+.layui-btn-link:hover {
+    color: #333
+}
+.layui-form-select dl dd.layui-this {
+    background: #3399cc;
+}
+.layui-body {
+    color: #333;
+}
+.layui-body-No {
+    left: 0 !important;
+    top: 0 !important
+}
+
+
+
+.layui-layout-admin .layui-body {
+    bottom: 0 !important
+}
+.header {
+    height: 100px;
+    line-height: 100px;
+}
+.header .content {
+    width: 62.5%;
+    min-width: 900px;
+    margin: 0 auto
+}
+.body {
+    background: url('~/Plugin/image/bg_login.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    background: #f2f2f2;
+}
+.body .content {
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 62.5%;
+    min-width: 900px;
+    margin: 0 auto
+}
+.body .content {
+    color: #fff;
+    position: relative
+}
+.body .content .left {
+    text-align: center
+}
+.body .content .left .title {
+    margin-top: 32px;
+}
+.body .content .right {
+    padding: 50px;
+    background-color: #fff;
+    z-index: 100
+}
+.body .right .title {
+    font-size: 24px;
+    color: #333333;
+    font-weight: 800;
+    line-height: 50px;
+}
+.body .right .username, .body .right .password {
+    width: 330px;
+    height: 50px;
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+.body .right .password {
+    margin-top: 28px;
+}
+.body .right .icon {
+    width: 50px;
+    height: 50px;
+    line-height: 35px;
+    text-align: center;
+    color: #999999
+}
+.body .right input {
+    flex: 1;
+    border: none
+}
+.body .right .rem-password {
+    margin-top: 20px;
+}
+.forget_pass {
+    margin-top: 20px;
+    text-align: right;
+}
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #1E9FFF !important;
+    background-color: #1E9FFF !important
+}
+.body .content .title1 {
+    font-size: 40px;
+    line-height: 51px;
+}
+.body .content .title2 {
+    font-size: 16px;
+    line-height: 51px;
+}
+.body .bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.body .bottom img {
+    width: 100%;
+    height: 100%
+}
+.footer {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    width: 100%;
+    z-index: 100
+}

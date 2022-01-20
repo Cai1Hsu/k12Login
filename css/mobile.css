@@ -1,0 +1,196 @@
+﻿@media screen and (max-width:768px) {
+    * {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .layui-layout-admin {
+        display: none;
+    }
+
+    .mobile-panel {
+        padding: 40% 1rem 0 1rem;
+        display: block;
+    }
+
+        .mobile-panel.forget {
+            padding: 0 1rem;
+        }
+
+        .mobile-panel .logo {
+            height: 5rem;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 0;
+            text-align: center;
+        }
+
+            .mobile-panel .logo div {
+                font-size: 1rem;
+                display: block;
+            }
+
+
+    .login-form {
+        margin-top: 2rem;
+    }
+
+        .login-form .form-item {
+            position: relative;
+            padding: .25rem 0 .25rem 2rem;
+            border-bottom: 1px solid #e6e8e6;
+            line-height: 1.5rem;
+        }
+
+            .login-form .form-item * {
+                font-size: .7rem !important;
+            }
+
+            .login-form .form-item.no-border {
+                border: none;
+                padding: 0;
+                padding: .25rem 0;
+            }
+
+            .login-form .form-item .layui-icon {
+                color: #3880ff;
+                width: 1rem;
+                height: 1rem;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0,-50%)
+            }
+
+            .login-form .form-item input[type=text],
+            .login-form .form-item input[type=password],
+            .login-form .form-item input[type=number] {
+                height: 1.5rem;
+                border: none;
+                outline: none;
+                font-size: 0.8rem;
+                font-weight: bold;
+                width: 100%;
+            }
+
+
+            .login-form .form-item input::-webkit-input-placeholder {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+
+            .login-form .form-item input:-moz-placeholder {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+
+            .login-form .form-item input::-moz-placeholder {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+
+            .login-form .form-item input:-ms-input-placeholder {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+
+    .btn-login {
+        font-size: .7rem !important;
+        border-radius: .6rem !important;
+        margin-top: 0 !important;
+    }
+
+    .remeberme {
+        font-size: .6rem !important;
+        vertical-align: -0.12em !important;
+    }
+
+    .nav-bar {
+        border-bottom: 1px solid #e6e8e6;
+        padding: 0.25rem 0;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        position: relative;
+    }
+
+        .nav-bar .back-button {
+            position: absolute;
+            left: 0.5rem;
+        }
+
+            .nav-bar .back-button .layui-icon {
+                font-size: 1.2rem;
+            }
+
+
+
+    .mobile-panel.forget .login-form {
+        margin-top: 0;
+    }
+
+        .mobile-panel.forget .login-form .form-item {
+            padding: .25rem 0 .25rem 0;
+        }
+
+    .send-sms {
+        background-color: #0052CC;
+        color: #fff;
+        display: inline-block;
+        float: right;
+        padding: 0 .5rem;
+        border-radius: 12px;
+    }
+
+        .send-sms:hover {
+            color: #fff;
+        }
+
+        .send-sms[disabled] {
+            background-color: #e0e0e0;
+        }
+}
+
+@media screen and (min-width:768px) {
+    .layui-layout-admin {
+        display: block;
+    }
+
+    .mobile-panel {
+        display: none;
+    }
+}
+/*系统input自动填充样式重置*/
+input:-internal-autofill-selected {
+    background-color: white !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+    box-shadow: inset 0 0 0 1000px white !important;
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+    input:-webkit-autofill:focus {
+        box-shadow: 0 0 0px 1000px white inset !important;
+    }
+
+.btn-login {
+    background: #0052CC;
+    color: #fff;
+    font-size: 12px;
+    line-height: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+    .btn-login:hover {
+        background: rgba(0, 82, 204, .9);
+        color: #fff;
+    }

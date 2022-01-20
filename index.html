@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>&#x6570;&#x5B57;&#x6821;&#x56ED;</title>
+    <link rel="icon" href="https://static.k12top.com/Common/yunmalogo_new.png" type="image/x-icon">
+    <link href="/Plugin/layui/css/layui.css" rel="stylesheet" />
+    <link href="/css/yueqing.css" rel="stylesheet" />
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/Plugin/layui/layui.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="/css/iconfont.css" rel="stylesheet" />
+    <link href="/css/mobile.css" rel="stylesheet" />
+    <link href="/Plugin/layui/css/layui.css" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            font-size: 20px;
+        }
+
+        .resetpwd-form .layui-form-label {
+            width: 60px;
+        }
+
+        .resetpwd-form .layui-input-block {
+            margin-left: 90px;
+        }
+
+            .resetpwd-form .layui-input-block .layui-input {
+                padding-left: 25px
+            }
+
+        .layui-icon-input {
+            position: absolute;
+            line-height: 38px;
+            margin-left: 5px;
+        }
+
+        #btnSendCode[disabled] {
+            background-color: #e0e0e0;
+        }
+
+        .container-left {
+            background: linear-gradient(-90deg,rgba(0, 82, 204, 0.05),rgba(255,255,255,1));
+            background-size: 85% 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .container-body {
+            position: relative;
+            height: 100%;
+        }
+
+        html,
+        body {
+            font-size: 20px;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        .layui-layout-admin .layui-body {
+            overflow: hidden !important;
+        }
+
+        .logo {
+            height: 100px;
+            line-height: 100px;
+            padding-left: 10%;
+        }
+
+            .logo div, .logo img {
+                display: inline-block;
+            }
+
+            .logo div {
+                font-size: 16px;
+                color: #1982FF;
+                font-weight: bold;
+                vertical-align: -0.2em;
+                margin-left: 5px;
+            }
+
+        .bg-image {
+            width: 100%;
+            height: auto;
+            position: relative;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%,-50%);
+        }
+
+        .login-panel {
+            width: 60%;
+            height: auto;
+            position: relative;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%,-50%);
+        }
+
+            .login-panel .title {
+                color: #171717;
+                font-weight: bold;
+                font-size: 30px;
+                padding: 10px 0;
+            }
+
+            .login-panel .sub-title {
+                color: #8F92A1;
+                font-size: 16px;
+                letter-spacing: 5px;
+            }
+
+            .login-panel .login-form {
+                margin-top: 20px;
+            }
+
+
+        .login-form .row {
+            padding: 10px 0 0 0;
+        }
+
+            .login-form .row.line {
+                border-bottom: 1px solid rgba(143, 146, 161, 0.1);
+                padding: 10px 0;
+                margin-bottom: 10px;
+            }
+
+        .login-form .form-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .input {
+            outline: none;
+            color: #171717;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            width: 100%;
+            padding: 5px 0;
+        }
+
+
+
+        .forgot {
+            float: right;
+            cursor: pointer;
+        }
+
+        .remeberme {
+            background: #DEEBFF;
+            border: none;
+            vertical-align: -0.2em;
+            margin-right: 5px;
+        }
+
+        ::-webkit-input-placeholder { /* Edge */
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        ::placeholder {
+            color: #ccc;
+            font-size: 12px;
+        }
+        /*系统input自动填充样式重置*/
+        input:-internal-autofill-selected {
+            background-color: white !important;
+            background-image: none !important;
+            color: rgb(0, 0, 0) !important;
+            box-shadow: inset 0 0 0 1000px white !important;
+        }
+
+        input:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px white inset !important;
+        }
+
+            input:-webkit-autofill:focus {
+                box-shadow: 0 0 0px 1000px white inset !important;
+            }
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?eb8698589a7ad2bab48fac419b84cff4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-body layui-body-No">
+            <div class="layui-col-md5 layui-col-sm5 container-left">
+                <div class="logo">
+                    <img src="https://static.k12top.com/Common/yunmalogo_new.png" style="width: 44px; height:44px;" alt="logo" />
+                    <div>&#x6570;&#x5B57;&#x6821;&#x56ED;</div>
+                </div>
+
+                <div class="bg-image">
+                    <img src="/images/new_login_bg.png" style="width:100%;height:auto" />
+                </div>
+            </div>
+            <div class="layui-col-md7 layui-col-sm7 container-body">
+                <div class="login-panel">
+                    <div class="title">&#x6B22;&#x8FCE;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x6821;&#x56ED;</div>
+                    <div class="sub-title">&#x4E91;&#x805A;&#x6559;&#x80B2; &#x6167;&#x521B;&#x672A;&#x6765;</div>
+
+                    <div class="login-form">
+                        <div class="row">
+                            <a class="form-title">用户名</a>
+                        </div>
+                        <div class="row line">
+                            <input type="text" class="input" autocomplete="off" name="username" value=""
+                                   placeholder="请输入用户名" aria-required="true" id="txt_username" lay-verify="username" />
+                        </div>
+                        <div class="row">
+                            <a class="form-title">密码</a>
+                        </div>
+                        <div class="row line">
+                            <input type="password" class="input" autocomplete="off" id="txt_pwd" onkeydown="if (event.keyCode == 13) login(1,$('#btnLogin'));" name="password" value=""
+                                   placeholder="请输入密码" />
+                        </div>
+                        <div class="row">
+                            <label><input type="checkbox" class="remeberme" id="chbremeberme" />记住我</label>
+                            <a class="forgot" id="btnForgot">忘记密码?</a>
+                        </div>
+                        <div class="row">
+                            <a class="btn-login" id="btnLogin" onclick="login(1,this)">登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-panel">
+        <div class="logo">
+            <img src="https://static.k12top.com/Common/yunmalogo_new.png" width="60px" alt="logo" />
+            <div>&#x6570;&#x5B57;&#x6821;&#x56ED;</div>
+        </div>
+        <div class="login-form">
+            <div class="form-item">
+                <i class="layui-icon layui-icon-username"></i>
+                <input type="text" id="txt_username_mob" placeholder="请输入用户名" />
+            </div>
+            <div class="form-item">
+                <i class="layui-icon layui-icon-password"></i>
+                <input type="password" id="txt_pwd_mob" placeholder="请输入密码" />
+            </div>
+            <div class="form-item no-border">
+                <label><input type="checkbox" class="remeberme" id="chbremeberme_mob" />记住我</label>
+                <a class="forgot" href="/Login/ForgetPassword">忘记密码?</a>
+            </div>
+            <div class="form-item no-border">
+                <a class="btn-login" id="btnLogin" onclick="login(2,this)">登录</a>
+            </div>
+        </div>
+    </div>
+    <div id="resetPwdForm">
+        <form class="layui-form">
+            <div class="layui-form resetpwd-form" style="padding:10px 15px">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">手机号码：</label>
+                    <div class="layui-input-block">
+                        <i class="layui-icon layui-icon-cellphone layui-icon-input"></i>
+                        <input type="number" name="MobileNo" id="txt_Phone" value="" maxlength="50" lay-verify="required|phone" placeholder="请输入手机号码" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">验证码：</label>
+                    <div class="layui-input-block">
+                        <i class="layui-icon layui-icon-vercode layui-icon-input"></i>
+                        <input class="layui-input" type="password" name="Code" value=""
+                               placeholder="请输入收到的验证码" aria-required="true" id="txt_Code" style="width:180px;display:inline-block" />
+                        <button type="submit" lay-submit="" lay-filter="btnSendCode" id="btnSendCode" class="layui-btn">获取验证码</button>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">新密码：</label>
+                    <div class="layui-input-block">
+                        <i class="layui-icon layui-icon-password layui-icon-input"></i>
+                        <input class="layui-input" type="password" name="NewPwd" value=""
+                               placeholder="请输入新密码" aria-required="true" lay-verify="password" id="txt_resetpwd" />
+                    </div>
+                </div>
+                <button type="submit" lay-submit="" id="btnConfirmUpdate" lay-filter="btnConfirmUpdate" style="display:none">确定</button>
+            </div>
+        </form>
+    </div>
+    <input type="hidden" id="hd_User" />
+    <input type="hidden" id="hd_thirdPartyType" />
+            <input type="hidden" id="hd_isBinding" value="0" />
+    <script>
+        //是否从第三方登录成功
+        if ($('#hd_isBinding').val() == "1") {
+            var data = {
+                Access_token: $('#hd_access_token').val(),
+                uType: $('#hd_uType').val(),
+                AppUrl: $('#hd_appUrl').val(),
+                isBind: $('#hd_isBind').val()
+            };
+            StandardPost(data);
+        }
+
+        var token = '';
+        var targetPath = "";
+        var access_token = '', refresh_token = '';
+        function login(event,t) {
+            var userName = "";
+            var passWord = "";
+            if (event === 1) {
+                userName = $("#txt_username").val().trim();
+                passWord = $("#txt_pwd").val().trim();
+            } else {
+                userName = $("#txt_username_mob").val().trim();
+                passWord = $("#txt_pwd_mob").val().trim();
+            }
+            if (userName == '') {
+                alert('请输入用户名');
+                return;
+            }
+            if (passWord == '') {
+                alert('请输入密码');
+                return;
+            }
+            var appid = '';
+            if (getQueryString("AppId") != null) {
+                appid = getQueryString("AppId");
+            }
+            else {
+                appid="4";
+            }
+
+            targetPath = getQueryString("targetPath");
+            if (targetPath != null) {
+                $("#hd_thirdPartyType").val("3");
+                $("#hd_User").val("pan");
+            }
+
+            var _this = $(t);
+            _this.text("登录中.....").attr("disabled", "disabled").css("cursor","not-allowed");
+            var param = {
+                'AppId': appid,
+                'UserName': userName,
+                'Pwd': passWord,
+                'UserTag': $('#hd_User').val(),
+                'thirdPartyType': $('#hd_thirdPartyType').val(),//第三方用户类别（1：乐清大数据平台，2：云码平台）
+                'uType': 1,
+                'isYueQing': 0
+            };
+            //console.log(param);
+            $.ajax({
+                type: "post",
+                dataType: 'json',
+                //contentType: 'application/json; charset=UTF-8',
+                url: 'https://live.k12top.com/Login/Login',
+                data: param,
+                success: function (data) {
+                    //console.log(JSON.stringify(data));
+                    if (data.HasError) {
+                        _this.text("登录").removeAttr("disabled", "disabled").css("cursor", "pointer");
+                        alert(data.Message);
+                        return;
+                    }
+                    _this.text("登录成功，正在跳转");
+                    var remMe = false;
+                    if (event === 1) {
+                        remMe=$("#chbremeberme").prop("checked")
+                    } else
+                        remMe = $("#chbremeberme_mob").prop("checked")
+                    if (remMe === true) {
+                        localStorage.setItem("username", param.UserName);
+                        localStorage.setItem("password", param.Pwd);
+                    }
+                    //自动登录设置
+                    //if (document.getElementById('cbAuto').checked) {
+                    //    setAutoLogin();
+                    //}
+
+                    //access_token = data.data.Access_token;
+                     //$('#txt_token').val(JSON.stringify(data));
+                    //window.location.href = data.Data.AppUrl + '?access_token=' + access_token + '&refresh_token=' + refresh_token;
+                    //data.Data.AppUrl=;
+                    StandardPost(data.Data);
+                }
+            });
+        }
+
+        //
+        function validate_access_token() {
+            $.ajax({
+                headers: { "access_token": access_token, "AppId": "3" },
+                type: "post",
+                //url: "/account/ValidateSignature",
+                url:"https://live.k12top.com/account/ValidateSignature",
+                data: null,
+                dataType: "json",
+                success: function (data) {
+                    $('#txt_access_token').val(JSON.stringify(data));
+                }
+            });
+        }
+
+        //
+        function validate_refresh_token() {
+            $.ajax({
+                headers: { "refresh_token": refresh_token, "AppId": "3" },
+                type: "post",
+                url: "https://live.k12top.com/account/RefreshAccessToken",
+                data: null,
+                dataType: "json",
+                success: function (data) {
+                    $('#txt_refresh_token').val(JSON.stringify(data));
+                }
+            });
+        }
+
+        //
+        function switchApp() {
+            $.ajax({
+                headers: { "AppId": "3", "access_token": access_token, "targetId": "4" },
+                type: "post",
+                url: "https://live.k12top.com/account/SwitchApp",
+                data: null,
+                dataType: "json",
+                success: function (data) {
+                    $('#txt_switchApp').val(JSON.stringify(data));
+                }
+            });
+        }
+
+        //
+        function setAutoLogin() {
+            setCookie('user', $("#txt_username").val(), 30);
+            setCookie('pass', $("#txt_pwd").val(), 30);
+            //if (document.getElementById('cbAuto').checked) {
+            //    setCookie('autoLogin', document.getElementById('cbAuto').checked, 30);
+            //}
+        }
+
+        //
+        getAutoLogin();
+        function getAutoLogin() {
+            if (getCookie('user')) {
+                $("#txt_username").val(getCookie('user'));
+                $("#txt_pwd").val(getCookie('pass'));
+                //$('#cbAuto').attr('checked', getCookie('autoLogin'));
+            }
+            //if (getCookie('autoLogin')) {
+            //    document.getElementById('login-buttom').click();
+            //}
+        }
+        function setCookie(c_name, value, expiredays) {
+            var exdate = new Date()
+            exdate.setDate(exdate.getDate() + expiredays)
+            document.cookie = c_name + "=" + escape(value) +
+                ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
+        }
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
+                }
+            }
+            return ""
+        }
+        function checkCookie() {
+            username = getCookie('user')
+            if (username != null && username != "") { alert('Welcome again ' + username + '!') }
+            else {
+                username = prompt('Please enter your name:', "")
+                if (username != null && username != "") {
+                    setCookie('user', username, 365)
+                }
+            }
+        }
+        function StandardPost(data) {
+            console.log('url=' + data.AppUrl);
+            console.log('access_token=' + data.Access_token);
+            console.log('refresh_token=' + data.Refresh_token);
+
+            //url = "http://192.168.0.160:58908/";
+            var form = $("<form method='get' style='display:none;'></form>");
+            form.attr({ "action": data.AppUrl });
+            var appId = $("<input type='text' name='appId' value='4' />");
+            var access_token = $("<input type='text' name='access_token' value='" + data.Access_token + "' />");
+
+			//var refresh_token = $("<input type='text' name='refresh_token' value='" + data.Refresh_token + "' />");
+   //         var uType = $("<input type='text' name='uType' value='" + data.uType + "' />");
+   //         var UserName = $("<input type='text' name='UserName' value='" + data.UserName + "' />");
+   //         var Pwd = $("<input type='text' name='Pwd' value='" + data.Pwd + "' />");
+            form.append(appId);
+            form.append(access_token);
+
+            if (targetPath != null || targetPath !== "") {
+                var next = $("<input type='text' name='targetPath' value='" + targetPath + "' />");
+                form.append(next);
+            }
+            //form.append(refresh_token);
+   //         form.append(uType);
+   //         form.append(UserName);
+   //         form.append(Pwd);
+
+            $(document.body).append(form);
+            form.submit();
+        }
+
+        var html = $("#resetPwdForm").html();
+        $("#resetPwdForm").empty();
+        layui.use(['layer', 'form'], function () {
+            var layer = layui.layer
+                , form = layui.form;
+            var formLayerIndex;
+            $("#btnForgot").on('click', function () {
+                formLayerIndex =  layer.open({
+                    type: 1,
+                    content: html, //这里content是一个普通的String
+                    title: "重设密码",
+                    area: ['450px', '290px'],
+                    btn: ['确定', '取消'],
+                    yes: function (index, layero) {
+                        $("#txt_Code").attr("lay-verify", "required");
+                        $("#txt_resetpwd").attr("lay-verify", "required|resetpass");
+                        $("#btnConfirmUpdate").trigger('click');
+                        $("#txt_Code").removeAttr("lay-verify");
+                        $("#txt_resetpwd").removeAttr("lay-verify");
+                    }
+                });
+            });
+            //自定义验证规则
+            form.verify({resetpass: [
+                    /(?=.*[0-9])(?=.*[a-zA-Z]).{6,30}/
+                , '密码中必须包含字母(区分大小写)、数字, 且长度在6-30位。'
+                ]
+            });
+           //修改密码
+            form.on('submit(btnConfirmUpdate)', function (data) {
+                $.ajax({
+                    type: "post",
+                    url: "https://live.k12top.com/user/UpdatePWD",
+                    data: data.field,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.HasError) {
+                            layer.alert(data.Message, {
+                                icon: 2
+                            });
+                        }
+                        else {
+                            layer.msg("修改成功！");
+                            layer.close(formLayerIndex);
+                        }
+                    }
+                });
+                return false;
+
+            })
+            //发送验证码
+            form.on('submit(btnSendCode)', function (data) {
+                $("#btnSendCode").attr("disabled", "disabled");
+                $.ajax({
+                    type: "post",
+                    url: "https://live.k12top.com/user/SendVerifyCode?MobileNo=" + data.field.MobileNo,
+                    data: null,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.HasError) {
+                            $("#btnSendCode").removeAttr("disabled");
+                            layer.alert(data.Message, {
+                                icon: 2
+                            });
+                        }
+                        else {
+                            layer.msg("发送成功！");
+                            $("#txt_Code").attr("lay-verify", "required");
+                            $("#txt_resetpwd").attr("lay-verify", "required|resetpass");
+                            var second = 120;
+                            var interval = setInterval(function () {
+                                if (second > 0) {
+                                    second = second - 1;
+                                    $("#btnSendCode").html(second + " s");
+                                }
+                                else {
+                                    $("#btnSendCode").html("发送验证码");
+                                    $("#btnSendCode").removeAttr("disabled");
+                                    clearInterval(interval);
+                                }
+                            }, 1000);
+                        }
+                    }
+                });
+                return false;
+            });
+
+            $("#txt_username").val(localStorage.getItem("username"));
+            $("#txt_pwd").val(localStorage.getItem("password"));
+            if (localStorage.getItem("username")) {
+                $("#chbremeberme").attr("checked",true)
+            }
+        });
+        //跳转，到顶层
+        if (top.location !== self.location) {
+            top.location = self.location;
+        }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) { return decodeURI(r[2]) }//中文转码
+        return null;
+    }
+    </script>
+</body>
+</html>
