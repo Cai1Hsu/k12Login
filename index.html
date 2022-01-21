@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>&#x6570;&#x5B57;&#x6821;&#x56ED;</title>
+    <title>&#x6570;&#x5B57;&#x6821;&#x56ED; Powered by TanghuEsports™</title>
     <link rel="icon" href="https://static.k12top.com/Common/yunmalogo_new.png" type="image/x-icon">
     <link href="/Plugin/layui/css/layui.css" rel="stylesheet" />
     <link href="/css/yueqing.css" rel="stylesheet" />
@@ -194,10 +194,10 @@
     <script>
         var _hmt = _hmt || [];
         (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?eb8698589a7ad2bab48fac419b84cff4";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
+            // var hm = document.createElement("script");
+            // hm.src = "https://hm.baidu.com/hm.js?eb8698589a7ad2bab48fac419b84cff4";
+            // var s = document.getElementsByTagName("script")[0];
+            // s.parentNode.insertBefore(hm, s);
         })();
     </script>
 </head>
@@ -208,6 +208,7 @@
                 <div class="logo">
                     <img src="https://static.k12top.com/Common/yunmalogo_new.png" style="width: 44px; height:44px;" alt="logo" />
                     <div>&#x6570;&#x5B57;&#x6821;&#x56ED;</div>
+                    <div style="color: #171717">Powered by&nbsp;<a href="https://esports.tanghu.tech/" style="font-size: 16px;font-weight:bolder;vertical-align:-0.2;color:#5cb452">TanghuEsports™</a></div>
                 </div>
 
                 <div class="bg-image">
@@ -302,7 +303,13 @@
     </div>
     <input type="hidden" id="hd_User" />
     <input type="hidden" id="hd_thirdPartyType" />
-            <input type="hidden" id="hd_isBinding" value="0" />
+    <input type="hidden" id="hd_isBinding" value="0" />
+    <div class="mobile-panel" style="padding:0%;position:absolute;bottom: 5px;width:100%">
+        <div style="font-size: 14px;text-align: center; width: 100%;">
+        数字校园 Powered by&nbsp;
+        <a href="https://esports.tanghu.tech/" style="font-size: 14px;font-weight:bolder;vertical-align:-0.2;color:#5cb452">TanghuEsports™</a>
+        </div>
+    </div>
     <script>
         //是否从第三方登录成功
         if ($('#hd_isBinding').val() == "1") {
