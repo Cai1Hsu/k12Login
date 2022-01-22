@@ -263,7 +263,7 @@
             </div>
             <div class="form-item no-border">
                 <label><input type="checkbox" class="remeberme" id="chbremeberme_mob" />记住我</label>
-                <a class="forgot" href="/Login/ForgetPassword">忘记密码?</a>
+                <a class="forgot" onclick="$('#btnForgot').click()">忘记密码?</a>
             </div>
             <div class="form-item no-border">
                 <a class="btn-login" id="btnLogin" onclick="login(2,this)">登录</a>
@@ -326,6 +326,7 @@
         var targetPath = "";
         var access_token = '', refresh_token = '';
         function login(event,t) {
+            /*
             var userName = "";
             var passWord = "";
             if (event === 1) {
@@ -335,6 +336,7 @@
                 userName = $("#txt_username_mob").val().trim();
                 passWord = $("#txt_pwd_mob").val().trim();
             }
+            
             if (userName == '') {
                 alert('请输入用户名');
                 return;
@@ -343,6 +345,20 @@
                 alert('请输入密码');
                 return;
             }
+            */
+           // 云码的代码写得也太拉了。。。(cai1hsu)
+           // 别人的密码你给人家trim干啥阿，别人密码要是含空格登都登不上。
+           // 这么简单的逻辑还要写那么多行
+           // 就跟nm的刚学了两个月前端的水货一样
+           // 还有那个手机版的忘记密码也是，这都搞不好
+           // 以下5行是我重新写的
+           var userName = event == 1 ? $("#txt_username").val() : $("#txt_username_mob").val();
+           var passWord = event == 1 ? $("#txt_pwd").val() : $("#txt_pwd_mob").val();
+           if (userName = userName.trim() == String.empty || passWord == String.empty){
+                alert('请输入用户名或密码');
+                return;
+           }
+
             var appid = '';
             if (getQueryString("AppId") != null) {
                 appid = getQueryString("AppId");
