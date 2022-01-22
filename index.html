@@ -355,7 +355,7 @@
            // 以下5行是我重新写的
            var userName = event == 1 ? $("#txt_username").val() : $("#txt_username_mob").val();
            var passWord = event == 1 ? $("#txt_pwd").val() : $("#txt_pwd_mob").val();
-           if (userName = userName.trim() == String.empty || passWord == String.empty){
+           if ((userName = userName.trim()) == String.empty || passWord == String.empty){
                 alert('请输入用户名或密码');
                 return;
            }
